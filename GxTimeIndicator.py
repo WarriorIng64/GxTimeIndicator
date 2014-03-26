@@ -23,11 +23,6 @@ self.time_string = ""
 self.SetIcon(pygame.image.load("indicators/default/GxTimeIndicator/clock.png"))
 self.image = self.icon
 
-self.click_code = """
-pygame.quit()
-sys.exit()
-"""
-
 self.frame_code = """
 current_time = datetime.datetime.now()
 weekday = 'Someday'
