@@ -33,7 +33,21 @@ current_time = datetime.datetime.now()
 hour = current_time.hour
 minute = current_time.minute
 second = current_time.second
-time_string = ' ' + str(hour) + ':' + str(minute) + ':' + str(second) + ' '
+ampm = ''
+time_string = ' '
+if hour < 12:
+  ampm = 'AM'
+  time_string += str(hour)
+else:
+  ampm = 'PM'
+  time_string += str(hour - 12)
+time_string += ':'
+if minute < 10:
+  time_string += '0'
+time_string += str(minute) + ':'
+if second < 10:
+  time_string += '0'
+time_string += str(second) + ' ' + ampm + ' '
 if self.time_string != time_string:
   self.image = indicator_font.render(time_string, True, glass.accent_color)
   self.width = self.image.get_width()
