@@ -31,17 +31,17 @@ sys.exit()
 self.frame_code = """
 current_time = datetime.datetime.now()
 weekday = 'Someday'
-if current_time.weekday == 0:
+if current_time.weekday() == 0:
   weekday = 'Monday'
-elif current_time.weekday == 1:
+elif current_time.weekday() == 1:
   weekday = 'Tuesday'
-elif current_time.weekday == 2:
+elif current_time.weekday() == 2:
   weekday = 'Wednesday'
-elif current_time.weekday == 3:
+elif current_time.weekday() == 3:
   weekday = 'Thursday'
-elif current_time.weekday == 4:
+elif current_time.weekday() == 4:
   weekday = 'Friday'
-elif current_time.weekday == 5:
+elif current_time.weekday() == 5:
   weekday = 'Saturday'
 else:
   weekday = 'Sunday'
