@@ -32,7 +32,6 @@ self.frame_code = """
 current_time = datetime.datetime.now()
 hour = current_time.hour
 minute = current_time.minute
-second = current_time.second
 ampm = ''
 time_string = ' '
 if hour < 12:
@@ -44,10 +43,8 @@ else:
 time_string += ':'
 if minute < 10:
   time_string += '0'
-time_string += str(minute) + ':'
-if second < 10:
-  time_string += '0'
-time_string += str(second) + ' ' + ampm + ' '
+time_string += str(minute)
+time_string += ' ' + ampm + ' '
 if self.time_string != time_string:
   self.image = indicator_font.render(time_string, True, glass.accent_color)
   self.width = self.image.get_width()
