@@ -44,12 +44,14 @@ hour = current_time.hour
 minute = current_time.minute
 ampm = ''
 time_string = ' ' + weekday + ', '
-if hour < 12:
-  ampm = 'AM'
+if hour < 13:
   time_string += str(hour)
 else:
-  ampm = 'PM'
   time_string += str(hour - 12)
+if hour < 12:
+  ampm = 'AM'
+else:
+  ampm = 'PM'
 time_string += ':'
 if minute < 10:
   time_string += '0'
